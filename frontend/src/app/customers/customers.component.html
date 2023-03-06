@@ -1,0 +1,68 @@
+
+
+
+    
+    <h3>לקוחות</h3>
+
+    <div class="displayMode">
+        <label>
+            <input [(ngModel)]="displayMode" class="w3-radio" type="radio" name="displayMode" value="table"> טבלה
+        </label>
+        <label>
+            <input [(ngModel)]="displayMode" class="w3-radio" type="radio" name="displayMode" value="folders"> תיקיות
+        </label>
+    </div>
+    
+
+    <div class="button">
+        <button class="new" routerLink="/add-customer" >הוסף  <i class="fa far fa-plus"></i></button>
+    </div>
+  
+    <div *ngIf="displayMode =='table'" >
+    <table class="w3-table w3-striped w3-bordered">
+        <thead>
+            <tr>
+                <th>שם פרטי</th>
+                <th>שם משפחה</th>
+                <th>טלפון</th>
+                <th>אימייל</th>
+                <th>  </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td>{{ item.firstName }}</td>
+                <td>{{ item.lastName }}</td>
+                <td>{{ item.phone }}</td>
+                <td>{{ item.email }}</td>
+                <td><button class="w3-btn  w3-round"><i class="fa fa-edit" [routerLink]="['/','Customers', item.id]"></i></button></td>
+                <td><button class="w3-btn w3-red w3-round" (click)="delete(item)">x</button></td>
+    
+            </tr>
+        </tbody>
+    </table> 
+
+
+
+</div>
+
+
+
+    <div class="grid-container" *ngIf="displayMode =='folders'" >
+
+        <div class="cardPerson" *ngFor="let item of data; let i = index" [routerLink]="['/contacts', item.id]">
+      <div><img class="pic" src="assets/images/folder.png" alt="folder" ></div>
+      <div class="container">
+        <p>{{item.firstName}} {{item.lastName}}</p>
+       
+        
+        <div class="btns">
+            <button class="w3-btn  w3-round"  (click)="delete(item)">x</button>
+            <button class="w3-btn  w3-round"> <i class="fa fa-edit" [routerLink]="['/','contacts', item.id]"></i></button>
+      </div>
+    </div>
+
+
+
+
+

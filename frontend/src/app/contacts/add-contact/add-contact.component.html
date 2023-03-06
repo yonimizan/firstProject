@@ -1,0 +1,39 @@
+
+
+<h1> איש קשר חדש</h1>
+
+<form *ngIf="Form" [formGroup]="Form">
+    <div class="field">
+        <label><i class="fa fa-user"></i> שם פרטי:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="firstName">
+    </div>
+
+    <div class="field">
+        <label><i class="fa fa-envelope"></i> שם משפחה:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="lastName">
+    </div>
+
+    <div class="field">
+        <label><i class="fa fa-user"></i>אימייל:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="email">
+    </div>
+
+    <div class="field">
+        <label><i class="fa fa-asterisk"></i> טלפון:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="phone">
+    </div>
+     
+    <div class="field">
+        <label><i class="fa far fa-address-card"></i> כתובת:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="address">
+    </div>
+ 
+
+    <button class="createCustomer" [disabled]="!Form.valid" (click)="addContact()"  routerLink="/contacts"><i class="fa fa-check"></i></button>
+ 
+
+   
+</form>
+
+
+

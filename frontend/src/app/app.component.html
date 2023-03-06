@@ -1,0 +1,21 @@
+<div *ngIf="utility.getUser()">
+
+  <h1>{{ title }}</h1>
+
+  <div id="frame">
+    <p class="welcome">
+      שלום   {{ utility.getUser()?.fullName }} 
+        <button class="w3-btn w3-white w3-round" (click)="logout()"><i class="fas fa-sign-out-alt"></i> התנתק</button>
+    </p>
+    <app-navbar> </app-navbar>
+    
+      <router-outlet></router-outlet>
+      
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<div *ngIf="!utility.getUser()">
+  <router-outlet></router-outlet>
+</div>
+

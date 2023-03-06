@@ -1,0 +1,29 @@
+<h2 *ngIf="!customer">הוספת לקוח</h2>
+<h2 *ngIf="customer">עריכת לקוח </h2>
+
+
+
+<form *ngIf="form" [formGroup]="form">
+    <div class="field">
+        <label>שם פרטי:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="firstName">
+    </div>
+
+    <div class="field">
+        <label>שם משפחה:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="lastName">
+    </div>
+
+    <div class="field">
+        <label>אימייל:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="email">
+    </div>
+    <div class="field">
+        <label>טלפון:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="phone">
+    </div>
+
+
+    <button *ngIf="!customer" class="saveCus" [disabled]="!form.valid" (click)="add()">הוסף <i class="fa  fa-check"></i></button>
+    <button *ngIf="customer" class="saveCus" [disabled]="!form.valid" (click)="save()"> <i class="fa fa-check"></i></button>
+</form>

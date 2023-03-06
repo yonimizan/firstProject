@@ -1,0 +1,60 @@
+
+<h3>אנשי קשר</h3>
+
+<div class="displayMode">
+    <label>
+        <input [(ngModel)]="displayMode" class="w3-radio" type="radio" name="displayMode" value="table"> טבלה
+    </label>
+    <label>
+        <input [(ngModel)]="displayMode" class="w3-radio" type="radio" name="displayMode" value="folders"> תיקיות
+    </label>
+</div>
+
+<button class="newCon" routerLink="/add-Contact" >הוסף  <i class="fa far fa-plus"></i></button>
+
+<div *ngIf="displayMode === 'table'" >
+
+    <div class="w3-table w3-striped w3-bordered">
+        <input type="text" placeholder="search" ngModel="searchText">
+        <thead>
+            <tr>
+                <th>שם פרטי</th>
+                <th>שם משפחה</th>
+                <th>טלפון</th>
+                <th class="email">אימייל</th>
+                <th class="address"> כתובת </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data " ngr>
+                <td>{{ item.firstName }}</td>
+                <td>{{ item.lastName }}</td>
+                <td>{{ item.phone }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.address }}</td>
+               
+                <td><button class="w3-btn  w3-round"><i class="fa fa-edit" [routerLink]="['/','contacts', item.id]"></i></button></td>
+                <td><button class="w3-btn w3-red w3-round" (click)="delete(item)">x</button></td>
+    
+            </tr>
+        </tbody>
+    </div>
+    </div>
+
+    
+
+
+
+<div class="grid-container" *ngIf="displayMode =='folders'" >
+
+    <div class="cardPerson" *ngFor="let item of data; let i = index" [routerLink]="['/contacts', item.id]">
+  <div><img class="pic" src="assets/images/folder.png" alt="folder" ></div>
+  <div class="container">
+    <p>{{item.firstName}} {{item.lastName}}</p>
+   
+    
+    <div class="btns">
+        <button class="w3-btn  w3-round"  (click)="delete(item)">x</button>
+        <button class="w3-btn  w3-round"> <i class="fa fa-edit" [routerLink]="['/','contacts', item.id]"></i></button>
+  </div>
+</div>

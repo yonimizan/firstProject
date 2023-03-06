@@ -1,0 +1,74 @@
+h3{
+    text-align: center;
+    padding: 10px;
+    font-style: initial;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+tr, td, th{ 
+    text-align: center;
+    font-weight: lighter;
+    
+}
+.newCon {   
+    background-color: #629460; 
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 5px 20px;
+    position: relative;
+    cursor: pointer;;
+    font-size: 10px;
+  }
+
+
+
+
+
+.displayMode {
+    text-align: center;
+}
+
+.pic {
+    max-height: 50px;
+    position: relative;
+  
+}
+
+
+.cardPerson {
+   // margin-top: 20px;
+    min-width: 10px;
+    min-height: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.cardPerson:hover {
+    cursor: pointer;
+     
+}
+
+
+.grid-container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+}
+
+@media (max-width: 600px) and (max-height: 1000px) {
+    .email,
+    .address {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
