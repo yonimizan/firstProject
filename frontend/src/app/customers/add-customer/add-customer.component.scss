@@ -2,6 +2,10 @@
     padding: 12px;
 }
 
+h6{
+    text-align: center;
+}
+
 .w3-third {
     float: right;
 }
@@ -11,13 +15,18 @@ button {
 }
 .newCus {   
     background-color: #629460; 
-    border:#629460;
+    border: none;
     color: white;
-    margin-top: 15px;
-    
+    margin: 15px 15px 10px 0px;
     padding: 10px 50px;
     border-radius: 5px;
     box-shadow: 0 0 3px #0000006b;
     cursor: pointer;;
     font-size: 10px;
+
+  }
+
+
+  .field {
+    margin : 0px 15px 0px 15px;    
   }

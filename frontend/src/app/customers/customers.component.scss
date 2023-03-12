@@ -1,7 +1,7 @@
-h3{
+h2{
   text-align: center;
   padding: 10px;
-  font-style: initial;
+
 }
 
 
@@ -12,20 +12,19 @@ th, td {
   }
   .new {   
     background-color: #629460; 
-    margin-bottom: 10px;
-    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
     border: none;
     border-radius: 3px;
     color: white;
-    padding: 5px 20px;
-    position: relative;
+    padding: 3px 10px;
     cursor: pointer;;
-    font-size: 10px;
+    font-size: 5px;
   }
 
-  
-.displayMode {
-  text-align: center;
+  .displayMode {
+    text-align: left;
+    margin: 20px;
 }
 
 .pic {
